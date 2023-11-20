@@ -1,0 +1,95 @@
+<div class="container">
+    <div class="side-bar">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="main-content">
+        <div class="apresentacao">
+            <h1>Informações do Template</h1>
+            <hr>
+        </div>
+
+        <div class="informacoes template">
+            <div class="dados-template">
+                <div class="campo-esquerdo">
+                    <div class="campo">
+                        <label for="nome_completo">Template criador por: </label>
+                        <input type="text" placeholder="{{ criadorTemplate.nome_completo }}" disabled>
+                    </div>
+    
+                    <div class="campo">
+                        <label for="data_criacao">Data de registro: </label>
+                        <input type="text" placeholder="{{ template.data_criacao }}" disabled>
+                    </div>
+    
+                    <div class="campo">
+                        <label for="nome_template">Nome do template: </label>
+                        <input type="text" placeholder="{{ template.nome_template }}" disabled>
+                    </div>
+    
+                    <div class="campo">
+                        <label for="extensao_arquivo">Formato de arquivo: </label>
+                        <input type="text" placeholder="{{ template.extensao_arquivo }}" disabled>
+                    </div>
+    
+                    <div class="campo">
+                        <label for="quantidade_campos">Quantidade de campos: </label>
+                        <input type="text" placeholder="{{ template.quantidade_campos }}" disabled>
+                    </div>
+                </div>
+
+                <div class="campo-direito">
+                    <label class="radioLabel" for="statusTemplate">Status</label>
+                    <div class="campo-radio">
+                        <div class="campo-status ativo">
+                            <input class="radioInput" name="statusTemplate" (click)="alterarPerfil('ATIVO')" [disabled]="usuario.perfil_usuario !=='ADMINISTRADOR' " [checked]="template.status_template === 'ATIVO'" type="radio" >
+                            <label for="statusAtivo">ATIVO</label>
+                        </div>
+                        <div class="campo-status inativo">
+                            <input class="radioInput" name="statusTemplate" (click)="alterarPerfil('INATIVO')" [disabled]="usuario.perfil_usuario !=='ADMINISTRADOR' " [checked]="template.status_template === 'INATIVO'" type="radio">
+                            <label for="statusInativo">INATIVO</label>
+                        </div>
+                    </div>
+                    <div *ngIf="alteracoesRealizadas" class="alteracao-realizada">
+                        Status atualizado
+                    </div>
+                </div>
+
+            
+            </div>
+
+            <div *ngIf="usuario.perfil_usuario == 'ADMINISTRADOR'" class="btns-modificacoes">
+                <button (click)="salvarAlteracoes()" >Salvar Modificação</button>
+                <button routerLink="/template/templates-cadastrados" >Cancelar</button>
+            </div>
+        </div>
+
+        <h3>Informações dos campos</h3>
+        <div class="campos">
+            <div class="campos-template">
+                
+                <div *ngFor="let campoTemplate of listaCamposTemplate; let posicao = index" class="info-campo">
+                    
+                    <div class="apresentacao-campo">
+                        <h4>Campo {{ posicao + 1 }}</h4>
+                        <hr>
+                    </div>
+
+                    <div class="campo">
+                        <label for="nomeCampo">Nome do campo: </label>
+                        <input type="text" placeholder="{{ campoTemplate.nome_campo }}" disabled>
+                    </div>
+                    
+                    <div class="campo">
+                        <label for="tipoDado">Tipo de dado: </label>
+                        <input type="text" placeholder="{{ campoTemplate.tipo_dado }}" disabled>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

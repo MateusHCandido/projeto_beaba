@@ -1,0 +1,396 @@
+hr{
+    margin-left: 5%;
+    border-color: #258A42;
+    border: none;
+    height: 1px;
+    background-color: #258A42;
+    margin-bottom: 5%;
+}
+
+
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #F9FBF9;
+}
+
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 25vw;
+    color:  #F9FBF9;
+    background-color: #258A42;
+}
+
+.side-bar{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+}
+
+
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    margin-left: 25vw; /*Vai manter 200px afastado da side bar, onde se encontra fixada*/
+    
+}
+
+.apresentacao h1{
+    font-size: 3.5rem;
+    color: #258A42;
+    text-align: left;
+    margin-left: 5%;
+    text-transform: uppercase;
+    margin-top: 5%;
+}
+
+.apresentacao hr{
+    margin-right: 5%;
+}
+
+.cadastro{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.campo-esquerdo{
+    display: flex;
+    flex-direction: column;
+
+    width: 40%;
+    height: 40vh;
+    margin-top: 5%;
+    margin-left: 2%;
+}
+
+.campo-direito{
+    display: flex;
+    flex-direction: column;
+
+    width: 40%;
+    height: 40vh;
+    margin-top: 5%;
+}
+
+.insercao-dados{
+    display: flex;
+    justify-content: left;
+    justify-items: left;
+    flex-direction: column;
+    height: 50%;
+    width: 90%;
+}
+
+.insercao-dados label, input{
+    color: #258A42;
+    font-size: 28px;
+}
+
+.insercao-dados label{
+    font-size: 26px;
+}
+
+.insercao-dados input{
+    margin-top: 2%;
+    margin-bottom: 5%;
+    border: 5px solid;
+}
+
+.insercao-dados input:focus{
+    border: 5px solid #258A42;;
+    outline: none;
+}
+
+.tipo-dado{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 20vw;
+    height: 5.5vh;
+    margin-top: 1.9%;
+    
+    border: 4.5px solid #258A42;
+}
+
+.tipo-dado label{
+    align-items: center;
+    font-size: 18px;
+}
+
+#qtd_campos::-webkit-inner-spin-button,
+  #qtd_campos::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#qtd_linhas::-webkit-inner-spin-button,
+  #qtd_linhas::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+.nome-template-ul{
+    color: #258A42;
+}
+
+.qtd-campos{
+    margin-top: 5%;
+}
+
+#nomeTemplate{
+    margin-bottom: 0;
+}
+
+.opcao-tipo-dado{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.cadastro button, a {
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+.cadastro button{
+    width: 20rem;
+    height: 3rem;
+    font-size: 2rem;
+    justify-content: center;
+    margin-top: 15%;
+    border-radius: 6px;
+    border: none;
+    color: #F9FBF9;
+    background-color: #258A42;
+}
+
+.cadastro button:hover{
+    cursor: pointer;
+}
+
+.cadastro a{
+    font-size: 18px;
+    color: #258A42;
+    text-decoration: none;
+}
+
+.preenchimento-campos{
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    margin-left: auto;
+    color: #258A42;
+    margin: 0;
+}
+
+.preenchimento-campos h2{
+    margin-top: 8%;
+    margin-left: 5%;
+    font-size: 2rem;
+}
+
+.insercao-dados-campos{
+    display: flex;
+    flex-direction: row;
+    margin-left: 7%;
+}
+
+.dados-campos-direita{
+    display: flex;
+    flex-direction: column;
+    margin-left: 25vw;
+    width: 15vw;    
+}
+
+.nome-campo{
+    display: flex;
+    flex-direction: column;
+}
+
+.nome-campo label{
+    font-size: 26px;
+}
+
+.nome-campo input{
+    margin-top: 2%;
+    border: 5px solid;
+    color: #258A42;
+}
+
+.nome-campo input:focus{
+    outline: none;
+}
+.tipo-dado-campo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10%;
+    width: 30vw;
+}
+
+.tipo-dado-campo label{
+    font-size: 26px;
+    width: 20vw;
+}
+
+.tipo-dado-campo select{
+    height: 5vh;
+    width: 12vw;
+    
+    font-size: 20px;
+    color: #F9FBF9;
+
+    background-color: #258A42;
+    text-align: center;
+
+    border: none;
+    outline: none;
+}
+
+.tipo-dado-campo select:hover{
+    cursor: pointer;
+}
+
+.tipo-dado-campo select:focus{
+    outline: none;
+}
+
+.dados-campos-esquerda{
+    height: 25vh;
+    width: 27vw;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.dados-campos-direita label{
+    font-size: 26px;
+}
+
+.dados-campos-direita button{
+    color: #F9FBF9;
+    background-color: #258A42;
+    font-size: 1.2rem;
+    height: 4vh;
+    width: 3vw;
+    border: none;
+    text-align: center;
+    margin-left: 35%;
+    margin-top: 7%;
+}
+
+.insercao-dados button:hover{
+    cursor: pointer;
+}
+
+.dados-campos-direita button:hover{
+    cursor: pointer;
+}
+
+
+.insercao-dados button{
+    margin-top: 35%;
+}
+
+.confirmacao-campos{
+    height: 55vh;
+    width: 50vw;
+    border: 4px solid #258A42;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+}
+
+.info-campo{
+    display: flex;
+    margin-left: 1%;
+    margin-bottom: 3%;
+}
+
+.info-campo label{
+    font-size: 1.2rem;
+}
+
+.resultado-campo{
+    justify-content: center;
+    padding-left: 5px;
+    margin-left: 2%;
+
+    border: 3px solid #258A42;
+    background-color: #6d726d8f;
+    height: 4vh;
+    width: 15vw;
+}
+
+.registrar-template-btn button{
+    height: 7vh;
+    width: 20vw;
+    margin-top: 5%;
+    margin-left: 2%;
+
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    
+    color: #F9FBF9;
+    background-color: #258A42;
+    font-size: 1.5rem;
+    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.registrar-template-btn i{
+    font-size: 1.8rem;
+    margin-left: 2%;
+}
+
+.mensagem-confirmacao{
+    height: 3vh;
+    margin-top: 2%;
+
+}
+
+.template-cadastrado{
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    width: 35vw;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 3%;
+    border-radius: 4px;
+}
+
+.template-n-cadastrado{
+    width: 30vw;
+
+    font-size: 1.2rem;
+
+    color: #721c24;
+    background-color: #f8d7da;
+
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 3%;
+}
+
+footer{
+    height: 10vh;
+    margin-top: 8%;
+    margin-left: 25vw;
+
+    color: #F9FBF9;
+}
+

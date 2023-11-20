@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="side-bar">
+        <nav></nav>
+    </div>
+    <div class="main-content">
+        <form (submit)="fazerLogin()">
+            <div class="campo apresentacao">
+                <h1>Entrar</h1>
+            </div>
+            <div class="campo login">
+                <div *ngIf="ocorreuErro" class="mensagem-erro">
+                    Informações de login incorretas.
+                </div>
+                <div *ngIf="camposNaoPreenchidos" class="mensagem-erro">
+                    Campos não foram preenchidos.
+                </div>
+                <label for="matricula">Matrícula</label>
+                <input type="text" name="matricula" [(ngModel)]="matricula" required>
+                
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" [(ngModel)]="senha" required>
+    
+                <button type="submit" id="Entrar">Entrar</button>
+    
+                <a routerLink="/cadastro-usuario">Cadastre-se</a>
+            </div>
+        </form>
+    </div>
+</div>

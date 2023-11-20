@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="side-bar">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="main-content">
+        <div class="campo apresentacao h1">
+            <h1>Análise de arquivos</h1>
+            <hr>
+        </div>
+        <div class="parte-superior">
+            
+            <div class="dashboard l1">
+                <h3>Formato mais utilizado em cadastro de arquivos</h3>
+                <canvas #grafFormatoUtilizado></canvas>
+            </div>
+
+            <div class="dashboard l2">
+                <h3 for="quantidadeArquivosCadatrasados">Quantidade de arquivos cadastrados</h3>
+                <div class="info-quantidade">
+                    <p>{{ this.quantidadeArquivosCadastrados }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="parte-inferior">
+            <div class="apresentacao">
+                <h3>Arquivos recentemente cadastrados</h3>
+            </div>
+            <div class="info-campos">
+                <div class="nome-campos">
+                    <p id="data-registro">data registro</p>
+                    <p id="nome">nome arquivo</p>
+                    <p id="matricula">matricula criador</p>
+                </div>
+                <hr>
+            </div>
+
+            <div *ngFor="let arquivo of listaArquivos" class="lista-arquivos">
+                <div class="info-template">
+                    <p id="dataCriacao" >{{ arquivo.dataCriacao }}</p>
+                    <p>{{ arquivo.nomeArquivo }}</p>
+                    <p>{{ arquivo.matriculaCriador}}</p>
+                </div>
+                <div class="btn-visualizar">
+                    <button [disabled]="usuario.perfil_usuario == 'USUARIO'" (click)="visualizarArquivo(arquivo.caminhoArquivo)" >visualizar</button>
+               </div>
+
+            </div>
+            <mat-paginator *ngIf=" listaArquivos.length != 0" [length]="this.listaArquivos.length"
+                        [pageSize]="5"
+                        [pageSizeOptions]="[5, 10, 15]"
+                        (page)="OnPageChange($event)">
+            </mat-paginator>
+
+            <div *ngIf="listaArquivos.length == 0" class="msg-dashboard-info-none">
+                Não há arquivos registrados.
+            </div>
+        </div>
+        <footer>&copy; qqtech</footer>
+    </div>
+    
+</div>

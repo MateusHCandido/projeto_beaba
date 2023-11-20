@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="side-bar">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="main-content">
+        <div class="apresentacao">
+            <h1>Validação e upload de arquivos</h1>
+            <hr>
+        </div>
+
+        <div class="campo-validacao-upload">
+            <div class="insercao-arquivo">
+                <div class="campo-insercao-id">
+                    <label for="idTemplate">Insira o ID do template</label>
+                    <input type="text" name="idTemplate" [(ngModel)]="idTemplate">
+                    <label for="categoriaUpload">categoria do setor de envio</label>
+                    <select id="opcoesSelect" [(ngModel)]="opcaoSelecionada">
+                        <option style="text-align: center;" value="" disabled selected>SELECIONE</option>
+                        <option *ngFor="let opcao of opcoes" [value]="opcao">{{ opcao }}</option>
+                      </select>
+                    <input id="input-file" type="file" (change)="validarArquivoEnviado($event)">
+                </div>
+                
+            </div>
+            <div class="btns-validacao-upload">
+                <button (click)="levarParaValidacao()">Validar</button>
+            </div>
+        </div>
+
+        <mat-progress-bar *ngIf="barraCarregando" mode="indeterminate" ></mat-progress-bar>
+
+        <div *ngIf="mensagemArquivoValido" class="mensagem-acerto">
+            Upload do arquivo realizado!
+        </div>
+
+        <div *ngIf="mensagemArquivoInvalido" class="mensagem-erro">
+            Falha no upload de arquivo, verifique os dados corretamente!
+        </div>
+        
+        <footer>&copy; qqtech</footer>
+    </div>
+</div>

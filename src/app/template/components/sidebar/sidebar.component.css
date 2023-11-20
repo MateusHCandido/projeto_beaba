@@ -1,0 +1,142 @@
+.side-bar{
+    top: 0;
+    left: 0;
+    width: 25vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    background-color: #258A42;
+
+    color: #F9FBF9
+}
+
+
+
+.hr-cabecalho{
+    width: 23vw;
+    margin-right: 4%;
+}
+
+.cabecalho-nv1{
+    height: 10vh;
+    width: 23vw;
+    
+    display: flex;
+}
+
+.cabecalho-nv1 i {
+    font-size: 2.5rem;
+    margin-left: 0.5%;
+    margin-top: 0.5%;
+    cursor: pointer;
+}
+
+
+.cabecalho-nv2{
+    width: 25vw;
+    height: 60vh;
+    display: flex;
+}
+
+.rotas{
+    display: flex;
+    flex-direction: column;
+}
+
+.list-opcoes{
+    display: flex;
+    width: 25vw;
+}
+
+.opcao p{
+    font-size: 1.3rem;
+    margin-left: 3%;
+    margin-bottom: 2%;
+}
+
+.rota{
+    width: 22vw;
+    height: 5vh;
+    display: flex;
+    
+    color: #F9FBF9;
+    list-style: none;
+}
+
+.rota i{
+    width: 3vw;
+    margin-left: 0;
+    font-size: 1rem;
+}
+
+.rota a{
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #F9FBF9;
+}
+
+.rota a:hover{
+    text-decoration: underline;
+}
+
+
+/*Gerenciador de Acessos*/
+.gerenciador-acessos{
+    margin-top: 10%;
+}
+
+
+.cabecalho-nv3{
+    display: flex;
+    margin-top: 5vh;
+    height: 25vh;
+    width: 25vw;
+}
+
+.icone-funcionario{
+    width: 6vw;
+    margin-top: 10vh;
+    margin-bottom: 0;
+}
+
+.icone-funcionario i{
+    font-size: 5rem;
+}
+
+
+.dados-funcionario{
+    width: 12vw;
+    margin-top: 10vh;
+    margin-bottom: 0;
+}
+
+.dados-funcionario p {
+    margin-top: 2%;
+
+    font-size: 1.1rem;
+
+    max-width: 12vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-sair{
+    width: 3.5vw;
+    margin-top: 15vh;
+    padding-left: 10%;
+}
+
+.btn-sair i{
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+

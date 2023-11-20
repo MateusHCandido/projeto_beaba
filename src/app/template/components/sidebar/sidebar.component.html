@@ -1,0 +1,69 @@
+<nav class="side-bar">
+    <div class="cabecalho-nv1" >
+        
+    </div>
+    <div class="cabecalho-nv2" >
+        <div class="lista-opcoes">
+            <div class="opcao gerenciador-templates">
+                <p>Gerenciador de Templates</p>
+                <hr class="hr-cabecalho">
+
+                <ul class="rotas gt">
+                    <div class="rota">
+                        <i class="bi bi-arrow-right"></i>
+                        <li>
+                            <a routerLink="/template/registrar-template">Registrar Templates</a>
+                        </li>
+                    </div>
+                    <div class="rota">
+                        <i class="bi bi-arrow-right"></i>
+                        <li>
+                            <a routerLink="/template/templates-cadastrados">Templates Cadastrados</a>
+                        </li>
+                    </div>
+                    
+                    <div *ngIf="usuario.perfil_usuario === 'ADMINISTRADOR'" class="rota">
+                        <i class="bi bi-arrow-right"></i>
+                        <li>
+                            <a routerLink="/template/validacao-upload-arquivos">Upload de Arquivos</a>
+                        </li>
+                    </div>
+
+                    <div class="rota">
+                        <i class="bi bi-arrow-right"></i>
+                        <li>
+                            <a routerLink="/arquivos/dashboard/info" >Análise de Arquivos</a>
+                        </li>
+                    </div>
+                </ul>
+                
+            </div>
+            <div *ngIf="usuario.perfil_usuario === 'ADMINISTRADOR'" class="opcao gerenciador-acessos">
+                <p>Gerenciador de Acessos</p>
+                <hr class="hr-cabecalho">
+                <ul class="rotas ga">
+                    <div class="rota">
+                        <i class="bi bi-arrow-right"></i>
+                        <li>
+                            <a routerLink="/usuario/alterar-perfil" >Gerenciar Acessos ao Template</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="cabecalho-nv3">
+            <div class="icone-funcionario">
+                <i class="bi bi-person-fill"></i>
+            </div>
+                
+            <div class="dados-funcionario">
+                <p>{{ usuario.nome_completo }}</p>
+                <p>{{ usuario.matricula }}</p>
+            </div>
+
+            <div class="btn-sair">
+                <i routerLink="/login" class="bi bi-box-arrow-left"></i>
+            </div>
+    </div>
+</nav>

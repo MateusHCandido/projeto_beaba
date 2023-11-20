@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="side-bar">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="main-content">
+        <div class="apresentacao">
+            <h1>Gerenciador de Acessos</h1>
+            <hr>
+        </div>
+
+        <main>
+            <div class="apresentacao-campo-busca">
+                <h2>Seleção de busca de usuário</h2>
+            </div>
+
+            <div class="campo-busca">
+                <div class="insercao-dado">
+                    <label for="matriculaDeBusca">Matrícula</label>  
+                </div>
+                <div class="insercao-dado buscar">
+                    <input  type="text" name="matriculaDeBusca" [(ngModel)]="matriculaDeBusca" required>
+                    <button (click)="buscarUsuario()">Buscar</button>
+                </div>
+            </div>
+            <div *ngIf="usuarioNaoLocalizado" class="mensagem-erro">
+                usuário não localizado
+            </div>
+        </main>
+
+        <div *ngIf="usuarioLocalizado" class="confirmacao-campos">
+            <div class="campo-esquerdo">
+                <div class="info-campo">
+                    <label for="nome_completo">Nome:</label>
+                    <input type="text" placeholder="{{ usuarioBuscado.nome_completo }}" disabled>
+                </div>
+                
+                <div class="info-campo">
+                    <label for="matricula">Matrícula:</label>
+                    <input type="text" placeholder="{{ usuarioBuscado.matricula }}" disabled> 
+                </div>
+
+                <div class="info-campo">
+                    <label for="perfil_usuario">Tipo de Acesso:</label>
+                    <input type="text" placeholder="{{ usuarioBuscado.perfil_usuario }}" disabled>
+                </div>
+            </div>
+            
+            <div class="campo-direito">
+                <button (click)="alterarPerfil()" class="btn-admin" [disabled]="adminDisabled">Tornar perfil de Administrador
+                    <i class="bi bi-person-fill-gear"></i>
+                </button>
+                <button (click)="alterarPerfil()" class="btn-user" [disabled]="userDisabled">Tornar perfil de Usuário
+                    <i class="bi bi-person-fill-gear"></i>
+                </button>
+            </div>
+        </div>
+        <footer>&copy; qqtech</footer>
+    </div>
+</div>

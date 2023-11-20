@@ -1,0 +1,325 @@
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #F9FBF9;
+}
+
+h1{
+    text-transform: uppercase;
+}
+
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 25vw;
+    color:  #F9FBF9;
+    background-color: #258A42;
+}
+
+.side-bar{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+}
+
+hr{
+    margin-left: 5%;
+    border-color: #258A42;
+    border: none;
+    height: 1px;
+    background-color: #258A42;
+    margin-bottom: 5%;
+}
+
+.apresentacao h1{
+    font-size: 3.5rem;
+    color: #258A42;
+    text-align: left;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+
+.apresentacao hr{
+    margin-right: 5%;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    margin-left: 25vw; 
+    
+}
+
+form{
+    width: 70vw;
+    height: 25vh;
+
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.campo-busca{
+    width: 60vw;
+    height: 17vh;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    border-radius: 5px;
+
+    background-color: #258A42;
+}
+
+.insercao-dado{
+    width: 25%;
+    color: #F9FBF9;
+
+    text-shadow: 1px 1px 1px #00000034;
+    font-size: 2rem;
+
+}
+
+.insercao-dado input{
+    height: 6vh;
+    width: 15vw;
+
+    font-size: 20px;
+
+    background-color: #F9FBF9;
+    color: #258A42;
+
+    outline: none;
+    border: none;
+}
+
+.insercao-dado input::placeholder{
+    text-transform: uppercase;
+    color: #258A42;
+}
+
+
+.opcoes select{
+    height: 6vh;
+    width: 12vw;
+
+    font-size: 20px;
+    color: #258A42;
+    background-color: #F9FBF9;
+
+    text-transform: uppercase;
+}
+
+.opcoes select:hover{
+    cursor: pointer;
+}
+
+.opcoes select:focus{
+    outline: none;
+}
+
+
+.bnt-confirmar-busca button{
+    height: 6vh;
+    width: 10vw;
+
+    font-size: 20px;
+    text-transform: uppercase;
+
+    color: #258A42;
+    background-color: #F9FBF9;
+
+    outline: none;
+    border: none;
+
+    cursor: pointer;
+}
+
+
+.campo-resultado{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.info-campos{
+    height: 6vh;
+    display: flex;
+}
+
+.info-campos{
+    height: 5vh;
+}
+
+.nome-campos{
+    display: flex;
+
+    width: 60vw;
+
+    justify-content: space-around;
+
+    color: #258A42;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.nome-campos p{
+    margin-left: 3%;
+    height: 5vh;
+}
+
+
+
+#nome-campo{
+    width: 12vw;
+}
+
+#status-campo{
+    width: 5vw;
+    padding-right: 7%;
+
+}
+
+#formato-campo{
+    margin-right: 5%;
+}
+
+.info{
+    margin-top: 5%;
+}
+
+.hr{
+    margin-top: 1%;
+    height: 10vh;
+}
+
+.template{
+    display: flex;
+    justify-content: space-between;
+
+    height: 7vh;
+    width: 70vw;
+    margin-bottom: 2%;
+    margin-left: 5%;
+}
+
+.info-template{
+    height: 8vh;
+    align-items: center;
+}
+
+.info-template button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 5vh;
+    width: 55vw;
+
+    
+
+    background-color: #258A42;
+
+    border-radius: 4px;
+    border:none
+}
+
+.info-template button:hover{
+    cursor: pointer;
+}
+
+
+
+.info-template p{
+
+    margin-right: 12%;
+    margin-top: 1%;
+
+    font-size: 20px;
+    color: #F9FBF9;
+}
+
+
+#nomeTemplate {
+    width: 20vw;
+    max-width: 20vw;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#status-template{
+    width: 12vw;
+}
+
+#formato-template{
+    margin-left: 5vw;
+}
+
+.btns-templates{
+    width: 25vw;
+
+    display: flex;
+    justify-content: center;
+
+    margin-left: 3%;
+
+}
+
+.btns-templates button{
+    height: 5vh;
+    width: 10vw;
+
+    
+    font-size: 20px;
+    text-transform: uppercase;
+
+    color: #F9FBF9;
+    background-color: #258A42;
+
+    border-radius: 5px;
+    border: none;
+}
+
+.btns-templates button:hover{
+    cursor: pointer;
+}
+
+.btns-templates button:disabled{
+    background-color: #1c66316c;
+    cursor: initial;
+}
+
+.mensagem-n-localizado{
+    width: 20vw;
+
+    margin: auto;
+
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+
+    font-size: 1.2rem;
+
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.msg-dashboard-info-none{
+    margin: auto;
+    font-size: 1.2rem;
+
+    background-color: #c4eec8;
+    border-color: #c4eec8;
+    color: #0c5460;
+
+    border-radius: 4px;
+    padding: 10px;
+}

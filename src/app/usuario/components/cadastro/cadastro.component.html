@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="side-bar">
+        <nav></nav>
+    </div>
+
+    <div class="main-content">
+        <form (ngSubmit)="onSubmit()">
+            <div class="campo apresentacao">
+                <h1>Cadastro</h1>
+            </div>
+
+            <div class="campo cadastro">
+                
+                <div class="insercao-dados esquerda">
+                    <label for="nomeCompleto">Nome Completo</label>
+                    <input type="text" [(ngModel)]="nomeCompleto" name="nomeCompleto" required>
+                </div>
+
+                <div class="insercao-dados direita">
+                    <label for="matricula">Matrícula</label>
+                    <input type="text"  [(ngModel)]="matricula" name="matricula" required>
+                </div>
+
+                <div class="insercao-dados esquerda">
+                    <label for="senha">Senha</label>
+                    <input type="password"  [(ngModel)]="senha" name="senha" required>
+                </div>
+
+                <div class="insercao-dados direita">
+                    <label for="confirmacaoSenha">Confirmar senha</label>
+                    <input type="password" [(ngModel)]="confirmacaoSenha" name="confirmacaoSenha" required>
+                </div>
+            </div>
+            <div *ngIf="erroCamposNaoPreenchidos" class="insercao-dados esquerda alert">
+                Campo(s) não preenchido(s).
+            </div>
+            <div *ngIf="erroValoresMatricula" class="insercao-dados esquerda alert">
+                Dados de matrícula devem ser apenas números inteiros
+            </div>
+            <div *ngIf="erroMensagemMatricula" class="insercao-dados esquerda alert">
+                Matrícula existente já cadastrada!
+            </div>
+            <div *ngIf="erroMensagemSenha" class="insercao-dados esquerda alert">
+                Senhas em branco ou não equivalentes!
+            </div>
+            <div *ngIf="usuarioCadastrado" class="insercao-dados esquerda good-alert">
+                Usuário cadastrado com sucesso!
+            </div>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+        
+    </div>
+</div>
+

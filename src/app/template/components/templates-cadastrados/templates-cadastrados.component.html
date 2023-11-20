@@ -1,0 +1,105 @@
+<div class="container">
+    <div class="side-bar">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="main-content">
+        <div class="apresentacao">
+            <h1>Templates Cadastrados</h1>
+            <hr>
+        </div>
+
+        <main>
+            <form>
+                <div class="campo-busca">
+                    <div class="insercao-dado">
+                        <input type="text" placeholder="Título" name="tituloBusca" [(ngModel)]="tituloBusca" required> 
+                    </div>
+                    <div class="insercao-dado opcoes">
+                        <select name="categoriaBusca" [(ngModel)]="categoriaBusca">
+                            <option value="" disabled selected>categoria</option>
+                            <option value="id">id</option>
+                            <option value="nome">nome</option>
+                            <option value="matrícula">matrícula funcionário</option>
+                            <option value="status">status</option>
+                          </select>
+                          
+                    </div>
+                    <div class="insercao-dado bnt-confirmar-busca">
+                        <button (click)="filtrarBusca()">filtrar</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+
+        <section class="campo-resultado info">
+            <div class="info-campos">
+                <div class="nome-campos">
+                    <p id="id-campo">id</p>
+                    <p id="nome-campo" >nome template</p>
+                    <p id="status-campo">status</p>
+                    <p id="formato-campo" >formato</p>
+                </div>
+            </div>
+        </section>
+        <div class="hr">
+            <hr>
+        </div>
+        <section class="campo-resultado">
+            <div *ngIf="listaTemplatesExibindo" class="lista-template">
+                <div  *ngFor="let template of pageSlice" class="template">
+                    <div *ngIf="listaTemplatesExibindo == true" class="info-template">
+                        <button (click)="informacoesTemplate(template.id_template)">
+                            <p>{{ template.id_template }}</p>
+                            <p id="nomeTemplate">{{ template.nome_template }}</p>
+                            <p id="status-template" >{{ template.status_template }}</p>
+                            <p id="formato-template" >{{ template.extensao_arquivo }}</p>
+                        </button>
+                    </div>
+                    <div class="btns-templates">
+                        <button (click)="downloadTemplate(template.id_template)" [disabled]="template.status_template == 'INATIVO'">download</button>
+                    </div>
+                </div>
+                <div class="paginacao">
+                    <mat-paginator *ngIf="listaTemplates.length != 0"
+                                [length]="this.listaTemplates.length"
+                                [pageSize]="5"
+                                [pageSizeOptions]="[5, 10, 15]"
+                                (page)="OnPageChange($event)">
+                </mat-paginator>
+                </div>
+                
+            </div>
+            <div *ngIf="listaTemplates.length == 0 && resultadoBusca == false" class="msg-dashboard-info-none">
+                Não há templates registrados.
+            </div>
+            
+            <div *ngIf="templateNaoLocalizado && listaTemplates.length == 0" class="mensagem-n-localizado">
+                Template não localizado
+            </div>
+
+            <div *ngFor="let template of listaTemplates" class="template">
+                <div *ngIf="resultadoBusca" class="info-template">
+                    <button (click)="informacoesTemplate(template.id_template)">
+                        <p id="template-id" >{{ template.id_template }}</p>
+                        <p id="nomeTemplate" >{{ template.nome_template }} </p>
+                        <p id="status-template" >{{ template.status_template }}</p>
+                        <p id="formato-template" >{{ template.extensao_arquivo }}</p>
+                    </button>
+                </div>
+                <div *ngIf="resultadoBusca" class="btns-templates">
+                    <button (click)="downloadTemplate(template.id_template)" [disabled]="template.status_template == 'INATIVO'">download</button>
+                </div>
+
+            </div>
+            <div class="paginacao">
+                <mat-paginator *ngIf="resultadoBusca"  
+                            [length]="this.listaTemplates.length"
+                            [pageSize]="5"
+                            [pageSizeOptions]="[5, 10, 15]"
+                            (page)="OnPageChange($event)">
+            </mat-paginator>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+@font-face {
+    font-family: Cousine;
+    src: url(../src/app/template/components/sidebar/font/Cousine-Regular.ttf);
+}
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body{
+    margin: 0;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

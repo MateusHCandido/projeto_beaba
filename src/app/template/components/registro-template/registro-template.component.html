@@ -1,0 +1,121 @@
+<div class="container">
+    <div class="side-bar">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div class="main-content">
+        <main>
+            <div class="campo apresentacao">
+                <h1>Registrar templates</h1>
+                <hr>
+            </div>
+            <form>
+                <div class="campo cadastro">
+                    <div class="campo-esquerdo">
+                        <div class="insercao-dados">
+                            <label for="nomeTemplate">Nome do template</label>
+                            <input type="text" id="nomeTemplate" name="nomeTemplate" [(ngModel)]="nomeTemplate" required>
+                            <ul class="nome-template-ul">
+                                <li>Preenchimento apenas com letras e números</li>
+                                <li>Limite de 50 caracteres</li>
+                            </ul>
+                        </div>
+                        <div class="insercao-dados qtd-campos">
+                            <label for="quantidadeCampos">Quantidade de campos</label>
+                            <input type="number" id="qtd_campos" name="quantidadeCampos" [(ngModel)]="quantidadeCampos" required>
+                        </div>
+
+                    </div>
+    
+                    <div class="campo-direito">
+                        <div class="insercao-dados opcoes">
+                            <label for="extensao-template">Formato template</label>
+                            <div class="tipo-dado">
+                                <div class="opcao-tipo-dado">
+                                    <input type="radio" name="extensaoTemplate" [(ngModel)]="extensaoTemplate" value=".csv"> 
+                                    <label>.csv</label>
+                                </div>
+                                <div class="opcao-tipo-dado">
+                                    <input type="radio" name="extensaoTemplate" [(ngModel)]="extensaoTemplate" value=".xls"> 
+                                    <label>.xls</label>
+                                </div>
+                                <div class="opcao-tipo-dado">
+                                    <input type="radio" name="extensaoTemplate" [(ngModel)]="extensaoTemplate" value=".xlsx">
+                                    <label>.xlsx</label>
+                                </div>
+                            </div>
+                            <div class="insercao-dados">
+                                <button (click)="adicionarCampos()">Adicionar campos</button>
+                            </div>
+                        </div> 
+                    </div>
+
+                </div>    
+            </form>        
+        </main>
+        <section *ngFor="let campo of camposArray; let posicao = index">
+            <div class="campo preenchimento-campos">
+                <div class="apresentacao-campo">
+                    <h2>CAMPO {{ posicao + 1 }}</h2>
+                    <hr>
+                </div>
+                <div class="insercao-dados-campos">
+                    <div class="dados-campos-esquerda">
+                        <div class="nome-campo">
+                            <label for="nomeColuna">Nome do campo</label>
+                            <input type="text" id="nomeCampo" name="nomeCampo" [(ngModel)]="campo.nomeCampo" required>
+                        </div>
+
+                        <div class="tipo-dado-campo">
+                            <label for="tipoDadoCampo">Tipo de dado</label>
+                            <select id="tipo-dados-campo" [(ngModel)]="campo.tipoDado">
+                                <option value="" disabled selected>SELECIONE</option>
+                                <option *ngFor="let tipo of tipoDado" [ngValue]="tipo">{{ tipo }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="dados-campos-direita">
+                        <label for="excluirCampo">Excluir campo</label>
+                        <button type="button" id="excluirCampo" (click)="removerCampo(posicao)">X</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section *ngIf="nomeTemplate != '' && extensaoTemplate != '' && quantidadeCampos > 0">
+            <div class="preenchimento-campos">
+                <div class="apresentacao-campo">
+                    <h2>Confirmações pré registro</h2>
+                    <hr>
+                </div>
+                <div class="confirmacao-campos">
+                    <div class="info-campo">
+                        <label for="nomeTemplate">Nome do template: </label>
+                        <div class="resultado-campo">{{ nomeTemplate }}</div>
+                    </div>
+
+                    <div class="info-campo">
+                        <label for="formatoTemplate">Formato template:</label>
+                        <div class="resultado-campo">{{ extensaoTemplate }}</div>
+                    </div>
+
+                    <div class="info-campo">
+                        <label for="qtdCampo">Quantidade de campos:</label>
+                        <div class="resultado-campo">{{ quantidadeCampos }}</div>
+                    </div>
+
+                    <div class="registrar-template-btn">
+                        <button (click)="registrarTemplate()" type="submit">Registrar template
+                            <i class="bi bi-file-earmark-arrow-up"></i>
+                        </button>
+                    </div>
+                    <div class="mensagem-confirmacao">
+                        <p class="template-cadastrado" *ngIf="templateCadastrado">Template cadastrado, aguardando ativação do administrador.</p>
+                        <p class="template-n-cadastrado" *ngIf="templateNaoCadastrado">Problemas ao cadastrar template, verifique os campos.</p>
+                        <p class="template-n-cadastrado" *ngIf="nomeTemplateNaoPadrao">Nome do template fora do padrão</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>&copy; qqtech</footer>
+    </div>
+</div>

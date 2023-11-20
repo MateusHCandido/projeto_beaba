@@ -1,0 +1,251 @@
+.container {
+    display: flex;
+    height: 100vh;
+    background-color: #F9FBF9;
+}
+
+/*SIDE BAR*/
+
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 25vw;
+    color:  #F9FBF9;
+    background-color: #258A42;
+}
+
+.side-bar{
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+}
+
+/*MAIN CONTENT*/
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    margin-left: 25vw; /*Vai manter 200px afastado da side bar, onde se encontra fixada*/
+}
+
+.apresentacao{
+    height: 15vh;
+}
+
+.apresentacao h1{
+    font-size: 3.5rem;
+    color: #258A42;
+    text-align: left;
+    margin-left: 5%;
+    text-transform: uppercase;
+    margin-top: 5%;
+}
+
+
+
+.h1 hr{
+    
+    width: 95%;
+}
+
+
+hr{
+    
+    border-color: #258A42;
+    border: none;
+    height: 1px;
+    background-color: #258A42;
+    margin-bottom: 5%;
+}
+
+
+
+h3{
+
+    color: #258A42;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+
+
+.parte-superior{
+    display: flex;
+    width: 70vw;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.dashboard{
+    margin-top: 5%;
+    width: 35%;
+    height: 40vh;
+}
+
+
+
+.info-quantidade p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20%;
+    margin-right: 20%;
+
+    font-size: 5rem;
+    color: #258A42;
+}
+
+
+
+.parte-inferior{
+    display: flex;
+    margin: auto;
+    width: 70vw;
+
+    flex-direction: column;
+}
+
+.apresentacao h3{
+    margin-top: 5%;
+    margin-left: 5%;
+    font-size: 2rem;
+}
+
+.info-campos{
+    height: 6vh;
+    display: block;
+    width: 70vw;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+
+.nome-campos{
+    display: flex;
+
+    width: 65vw;
+    margin-left: 5%;
+
+    color: #258A42;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.nome-campos p{
+    padding-left: 4%;
+    height: 5vh;
+}
+
+#data-registro{
+    padding-left: 3%;
+    
+}
+
+#nome{
+    margin-left: 7%;
+    
+}
+
+#matricula{
+    margin-left: 3%;
+    
+}
+
+.info-campos hr{
+    margin-bottom: 3%;
+}
+
+.lista-arquivos{
+    display: flex;
+
+    width: 70vw;
+
+    justify-content: space-between;
+}
+
+.info-quantidade p{
+    padding-left: 15%;
+}
+
+.info-template {
+    display: flex;
+
+    margin-left: 5%;
+    margin-top: 5%;
+    
+    height: 5vh;
+    width: 50vw;
+
+    border-radius: 5px;
+
+    background-color: #258A42;
+    color:#F9FBF9;
+}
+
+.info-template p{
+    width: 18vw;
+
+    margin-top: 1%;
+
+    font-size: 1.1rem;
+    color: #F9FBF9;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+.btn-visualizar{
+    width: 25vw;
+    margin-left: 3%;
+    margin-top: 5%;
+}
+
+.btn-visualizar button{
+    height: 5vh;
+    width: 12vw;
+
+
+    color: #F9FBF9;
+    background-color: #258A42;
+
+    text-transform: uppercase;
+    font-size: 1rem;
+
+    border-radius: 5px;
+    border:  none;
+    outline: none;
+
+    cursor: pointer;
+}
+
+.btn-visualizar button:disabled{
+    background-color: #1a612e59;
+    cursor: default;
+}
+
+.msg-dashboard-info-none{
+    margin: auto;
+    font-size: 1.2rem;
+
+    background-color: #c4eec8;
+    border-color: #c4eec8;
+    color: #0c5460;
+
+    border-radius: 4px;
+    padding: 10px;
+}
+
+footer{
+    height: 10vh;
+    margin-left: 25vw;
+
+    color: #F9FBF9;
+}
