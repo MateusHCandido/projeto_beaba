@@ -12,7 +12,7 @@
             <div class="campo cadastro">
                 
                 <div class="insercao-dados esquerda">
-                    <label for="nomeCompleto">Nome Completo</label>
+                    <label for="nomeCompleto">Nome completo</label>
                     <input type="text" [(ngModel)]="nomeCompleto" name="nomeCompleto" required>
                 </div>
 
@@ -31,6 +31,9 @@
                     <input type="password" [(ngModel)]="confirmacaoSenha" name="confirmacaoSenha" required>
                 </div>
             </div>
+            <div *ngIf="usuarioCadastrado" class="insercao-dados esquerda good-alert">
+                Usuário cadastrado com sucesso!
+            </div>
             <div *ngIf="erroCamposNaoPreenchidos" class="insercao-dados esquerda alert">
                 Campo(s) não preenchido(s).
             </div>
@@ -43,10 +46,6 @@
             <div *ngIf="erroMensagemSenha" class="insercao-dados esquerda alert">
                 Senhas em branco ou não equivalentes!
             </div>
-            <div *ngIf="usuarioCadastrado" class="insercao-dados esquerda good-alert">
-                Usuário cadastrado com sucesso!
-            </div>
-
             <button type="submit">Cadastrar</button>
         </form>
         

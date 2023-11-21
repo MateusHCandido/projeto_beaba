@@ -26,7 +26,6 @@ export class CadastroComponent {
 
 
   onSubmit(){
-    this.zerarMensagens();
 
     let camposPreenchidos = this.validarPreenchimentoCampos(this.nomeCompleto, this.matricula, this.senha, this.confirmacaoSenha);
 
@@ -69,8 +68,11 @@ export class CadastroComponent {
     .cadastrarUsuario( new UsuarioRequest(this.nomeCompleto, this.matricula, this.senha) )
     .subscribe(
       ( validResponse ) => {
-        this.zerarMensagens();
-        this.usuarioCadastrado = true;
+        console.log(this.erroMensagemMatricula);
+          console.log(this.erroMensagemSenha);
+          console.log(this.erroCamposNaoPreenchidos);
+          console.log(this.erroValoresMatricula);
+        this.ativarUsuarioCadastrado();
       }
     );
   }
@@ -81,7 +83,6 @@ export class CadastroComponent {
     .subscribe(
       ( buscaReponse ) => {
         if ( buscaReponse.matriculaLocalizada ){
-          this.ativarMsgMatriculaLocalizada();
         }
       }
     );
@@ -142,6 +143,15 @@ export class CadastroComponent {
     this.erroMensagemSenha = false;
     this.erroValoresMatricula = false;
     this.erroCamposNaoPreenchidos = false;
+  }
+
+  ativarUsuarioCadastrado(){
+    this.usuarioCadastrado = true;
+
+    this.erroMensagemSenha = false;
+    this.erroValoresMatricula = false;
+    this.erroCamposNaoPreenchidos = false;
+    this.erroMensagemMatricula = false;
   }
 }
 

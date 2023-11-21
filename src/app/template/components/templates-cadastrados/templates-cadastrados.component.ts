@@ -66,6 +66,8 @@ export class TemplatesCadastradosComponent implements OnInit {
               }
             }),
             (templateError) => {
+              this.listaTemplatesExibindo = false;
+              this.semRegistroTemplates = false;
               this.templateNaoLocalizado = true;
             }
           );
@@ -81,7 +83,10 @@ export class TemplatesCadastradosComponent implements OnInit {
                 this.listaTemplates.push( this.template );
                 this.templateNaoLocalizado = false;
                 this.semRegistroTemplates = false;
+                this.listaTemplatesExibindo = false;
+                this.resultadoBusca = true;
               }
+
             }),
             (templateError) => {
               this.templateNaoLocalizado = true;
@@ -98,6 +103,8 @@ export class TemplatesCadastradosComponent implements OnInit {
                 this.listaTemplates.push( this.template );
                 this.templateNaoLocalizado = false;
                 this.semRegistroTemplates = false;
+                this.listaTemplatesExibindo = false;
+                this.resultadoBusca = true;
               }
             }),
             (templateError) => {
@@ -115,6 +122,7 @@ export class TemplatesCadastradosComponent implements OnInit {
                 this.listaTemplates.push( this.template );
                 this.templateNaoLocalizado = false;
                 this.semRegistroTemplates = false;
+                this.resultadoBusca = true;
               }
             }),
             (templateError) => {

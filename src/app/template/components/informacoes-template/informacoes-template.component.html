@@ -64,32 +64,29 @@
             </div>
         </div>
 
-        <h3>Informações dos campos</h3>
-        <div class="campos">
-            <div class="campos-template">
-                
-                <div *ngFor="let campoTemplate of listaCamposTemplate; let posicao = index" class="info-campo">
-                    
-                    <div class="apresentacao-campo">
-                        <h4>Campo {{ posicao + 1 }}</h4>
-                        <hr>
-                    </div>
-
-                    <div class="campo">
-                        <label for="nomeCampo">Nome do campo: </label>
-                        <input type="text" placeholder="{{ campoTemplate.nome_campo }}" disabled>
-                    </div>
-                    
-                    <div class="campo">
-                        <label for="tipoDado">Tipo de dado: </label>
-                        <input type="text" placeholder="{{ campoTemplate.tipo_dado }}" disabled>
-                    </div>
-
-                </div>
-
-
+        <div class="info-campos">
+            <div class="apresentacao-campos">
+                <h3>Informações dos campos</h3>
             </div>
 
+            <div *ngFor="let campoTemplate of listaCamposTemplate; let posicao = index" class="info-campo">
+                
+                <div class="apresentacao-campo">
+                    <h4>Campo {{ posicao + 1 }}</h4>
+                    <hr>
+                </div>
+
+                <div class="campo">
+                    <label for="nomeCampo">Nome do campo: </label>
+                    <input type="text" placeholder="{{ campoTemplate.nome_campo }}" disabled>
+                </div>
+                
+                <div class="campo">
+                    <label for="tipoDado">Tipo de dado: </label>
+                    <input type="text" placeholder="{{ campoTemplate.tipo_dado }}" disabled>
+                </div>
+            </div>
         </div>
+        <footer>&copy; qqtech</footer>
     </div>
 </div>
